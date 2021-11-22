@@ -3,7 +3,7 @@ import MeetupList from '../components/meetups/MeetupList';
 import { MongoClient } from 'mongodb';
 
 export async function getStaticProps() {
-    const client = await MongoClient.connect('mongodb://localhost:27017/meetups');
+    const client = await MongoClient.connect('mongodb+srv://Yossi:Yossi17@meetups.isjmr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
     const db = client.db();
     const meetupCollection = db.collection('meetups');
     const meetups = await meetupCollection.find({}).toArray();
